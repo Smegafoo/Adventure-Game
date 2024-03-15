@@ -8,7 +8,7 @@ public class Main {
             case 1:
                 Scanner a=new Scanner(System.in);
                 System.out.println("Please enter your name:");
-                String player_name=a.nextLine();
+                String player_name="Smegafoo";
                 System.out.println("Welcome to the Adventure Game "+player_name);
                 break;
             case 2:
