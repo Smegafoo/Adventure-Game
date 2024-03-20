@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class CityCenter extends NormalLoc{
     private Inventory inventory;
     private Player player;
+    private Game game;
+
     public CityCenter(Player player,Inventory inventory){
         super(player, inventory,"City Center");
         this.player=player;
@@ -25,7 +27,9 @@ public class CityCenter extends NormalLoc{
             case 3:
                 EnterBlacksmith();
                 break;
-            default:
+            case 4:
+
+                break;
         }
         return true;
 
