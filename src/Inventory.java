@@ -5,9 +5,25 @@ public class Inventory {
     private int damage_potion;
     private Player player;
     private int water_number;
+    private int bread_number;
     private int beer_number;
     public Inventory(Player player){
         this.player=player;
+    }
+
+     /*Getter Setter methods
+
+    ------------------------------------------------------------
+
+
+    */
+
+    public int getBread_number() {
+        return bread_number;
+    }
+
+    public void setBread_number(int bread_number) {
+        this.bread_number = bread_number;
     }
 
     public String getPlayer_meele_weapon() {

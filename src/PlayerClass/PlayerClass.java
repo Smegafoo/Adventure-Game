@@ -34,6 +34,13 @@ public class PlayerClass {
         this.classMoney=classMoney;
     }
 
+     /*Getter Setter methods
+
+    ------------------------------------------------------------
+
+
+    */
+
     public int getClassMoney() {
         return classMoney;
     }

@@ -9,7 +9,7 @@ public class CityCenter extends NormalLoc{
         this.player=player;
         this.inventory=inventory;
     }
-
+    //We use that method when the user select enter the city center.
     @Override
     public boolean onLocation(){
         int select_city_center;
@@ -36,25 +36,30 @@ public class CityCenter extends NormalLoc{
         return true;
 
     }
-
+    //Method that entering the tavern.
     public void EnterTavern(){
         int select_tavern;
         Scanner in=new Scanner(System.in);
-        System.out.println("Welcome to the Tavern\n1)Buy water\n2)Buy beer\n3)Exit");
+        System.out.println("Welcome to the Tavern\n1)Buy water(10cp)\n2)Buy beer(15 cp)\n3)Buy bread(20cp)\n4)Exit" +
+                "\nYour money:"+player.getPlayerMoney()+"cp");
         select_tavern=in.nextInt();
         switch (select_tavern){
             case 1:
-                System.out.println("water");
+                buyWater();
                 break;
             case 2:
-                System.out.println("beer");
+                buyBeer();
                 break;
             case 3:
-                System.out.println("Exit");
+                buyBread();
+                break;
+            case 4:
+                //Exit
                 break;
             default:
         }
     }
+    //Method that entering the Potion Seller.
 
     public void EnterPotionSeller(){
         int select_potion_seller;
@@ -74,6 +79,7 @@ public class CityCenter extends NormalLoc{
 
         }
     }
+    //Method that entering the Blacksmith.
 
     public void EnterBlacksmith(){
         int select_blacksmith;
@@ -91,5 +97,77 @@ public class CityCenter extends NormalLoc{
                 break;
         }
     }
+    //Method that buying water.
 
+    public void buyWater(){
+        Scanner in=new Scanner(System.in);
+        int waterNumber;
+        int waterCost=10;
+        System.out.println("How many Water do you want!!");
+        waterNumber=in.nextInt();
+        int totalWaterCost=waterNumber*waterCost;
+        if(totalWaterCost<=this.getPlayer().getPlayerMoney()) {
+            this.getInventory().setWater_number(this.getInventory().getWater_number() + waterNumber);
+            this.getPlayer().setPlayerMoney(this.getPlayer().getPlayerMoney() - totalWaterCost);
+        }else{
+            System.out.println("You dont have  enough money for that !!");
+
+            }
+    }
+    //Method that buying beer.
+
+    public void buyBeer(){
+        Scanner in=new Scanner(System.in);
+        int beerNumber;
+        int beerCost=15;
+        System.out.println("How many beer do you want!!");
+        beerNumber=in.nextInt();
+        int totalBeerCost=beerNumber*beerCost;
+        if(totalBeerCost<=this.getPlayer().getPlayerMoney()) {
+            this.getInventory().setBeer_number(this.getInventory().getBeer_number() + beerNumber);
+            this.getPlayer().setPlayerMoney(this.getPlayer().getPlayerMoney() - totalBeerCost);
+        }else{
+            System.out.println("You dont have  enough money for that !!");
+
+        }
+    }
+    //Method that buying bread.
+    public void buyBread(){
+        Scanner in=new Scanner(System.in);
+        int breadNumber;
+        int breadCost=20;
+        System.out.println("How many bread do you want!!");
+        breadNumber=in.nextInt();
+        int totalBreadCost=breadCost*breadNumber;
+        if(totalBreadCost<=this.getPlayer().getPlayerMoney()) {
+            this.getInventory().setBread_number(this.getInventory().getBread_number() + breadCost);
+            this.getPlayer().setPlayerMoney(this.getPlayer().getPlayerMoney() - totalBreadCost);
+        }else{
+            System.out.println("You dont have  enough money for that !!");
+
+        }
+
+    }
+
+    /*Getter Setter methods
+
+    ------------------------------------------------------------
+
+
+    */
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 }

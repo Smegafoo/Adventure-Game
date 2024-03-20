@@ -87,6 +87,13 @@ public class Player {
 
     }
 
+     /*Getter Setter methods
+
+    ------------------------------------------------------------
+
+
+    */
+
     public String getPlayerClassName() {
         return playerClassName;
     }

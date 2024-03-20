@@ -13,6 +13,7 @@ public class Game {
 
 
     }
+    //Method that starting the game.
     public void Start_game(){
         Scanner in=new Scanner(System.in);
         int select_start;
@@ -33,6 +34,7 @@ public class Game {
 
 
     }
+    //Method that after the select name and class,We select the place where we want to go and see our ınventory.
 
     public void selectRegion() {
         Scanner in =new Scanner(System.in);
@@ -50,6 +52,9 @@ public class Game {
                 case 3:
                     break;
                 case 4:
+                    System.out.println("Water Number:"+i1.getWater_number()+"\nBeer Number:"+i1.getBeer_number()+
+                            "\nBread Number:"+i1.getBread_number()+"\nYour Money:"+p1.getPlayerMoney());
+
                     break;
                 default:
                     break;
