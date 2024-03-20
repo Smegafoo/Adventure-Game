@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class CityCenter extends NormalLoc{
     private Inventory inventory;
     private Player player;
-    private Game game;
 
     public CityCenter(Player player,Inventory inventory){
         super(player, inventory,"City Center");
@@ -15,22 +14,25 @@ public class CityCenter extends NormalLoc{
     public boolean onLocation(){
         int select_city_center;
         Scanner in=new Scanner(System.in);
-        System.out.println("Welcome to the City Center\n1)Go to the Tavern\n2)Go to the Potion Seller\n3)Go to the Blacksmith\n4)Exit");
-        select_city_center=in.nextInt();
-        switch (select_city_center){
-            case 1:
-                EnterTavern();
-                break;
-            case 2:
-                EnterPotionSeller();
-                break;
-            case 3:
-                EnterBlacksmith();
-                break;
-            case 4:
+        do{
+            System.out.println("Welcome to the City Center\n1)Go to the Tavern\n2)Go to the Potion Seller\n3)Go to the Blacksmith\n4)Exit");
+            select_city_center=in.nextInt();
+            switch (select_city_center){
+                case 1:
+                    EnterTavern();
+                    break;
+                case 2:
+                    EnterPotionSeller();
+                    break;
+                case 3:
+                    EnterBlacksmith();
+                    break;
+                case 4:
+                    break;
+            }
 
-                break;
-        }
+        }while(select_city_center !=4);
+
         return true;
 
     }
